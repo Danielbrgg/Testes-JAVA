@@ -1,130 +1,158 @@
+import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // int Idade = 20;
-        //String name = "Daniel";
-        //var nomes = "Davi";
 
-        //TIPOS PRIMITIVOS = numeros inteiros, decimais e o boolean 
-        // numeros inteiros
-        //byte são 8  bits que vai de -128 a 127
-        //short são 16 bits que vai de -32.768 a 32.767
-        //inteiro 32  bits
-        //long são 64 bits
+        System.out.println("========== JAVA ESTUDOS ==========\n");
 
-        //decimais 
-        // float 32 bits, pequenos ex: 10,21
-        //double 64 bits, grandes ex:  
+        // =====================================================
+        // TIPOS PRIMITIVOS
+        // =====================================================
 
-        //String
-        /* 
-        String = palavras 
-        char = unica letra ex a,b,c,d,e,
-        char MeuChar = 'a';
-        MeuChar = "Daniel" Erradooo!
-        */
+        /*
+         * TIPOS PRIMITIVOS
+         * 
+         * byte   -> 8 bits
+         * short  -> 16 bits
+         * int    -> 32 bits
+         * long   -> 64 bits
+         * 
+         * float  -> decimal pequeno
+         * double -> decimal grande
+         * 
+         * boolean -> true ou false
+         * char -> único caractere
+         */
 
+        int idade = 16;
+        double altura = 1.75;
+        char letra = 'D';
+        boolean vivo = true;
 
-        // boolean bool = true;
-        // if(bool){
-        //     System.out.println("Verdadeiro!");
-        // } else {
-        //     System.out.println("FALSE!");
-        // }
+        System.out.println("========== TIPOS PRIMITIVOS ==========");
+        System.out.println("Idade: " + idade);
+        System.out.println("Altura: " + altura);
+        System.out.println("Letra: " + letra);
+        System.out.println("Vivo?: " + vivo);
 
-        // int[] Vetor = {1,2,3,4,5,6};
+        // =====================================================
+        // ARRAYS
+        // =====================================================
 
-        // System.out.println(Vetor[4]);
-        // System.out.println(Vetor.length);
+        System.out.println("\n========== ARRAYS ==========");
 
-        // int[] NovoVetor = new int[10];
-        // // ja determinei o tamanho do vetor sem determinar o valor das casas
+        // Array possui tamanho FIXO
 
-        // System.out.println(NovoVetor[9]);
+        String[] nomesArr = new String[5];
 
-        // if(NovoVetor[9] == 0){
-        //     System.out.println("Realmente é zero e não null");
-        //}
+        nomesArr[0] = "Daniel";
+        nomesArr[1] = "Braga";
+        nomesArr[2] = "Gomes";
 
+        System.out.println("Tamanho do array: " + nomesArr.length);
 
-        //Frecura, não aceita tipos primitivos, Dito isso o integer == int e fique por isso 
-        // ArrayList<Integer> numeros = new ArrayList<>();
+        // Cada String do array vai, uma por vez, para "nome"
+        for(String nome : nomesArr){
 
-        //  String[] nomesArr = new String[10];
-
-        //  nomesArr[0] = "Daniel";
-        //  nomesArr[3] = "Balestrin";
-
-        // System.out.println(nomesArr[3]);
-
-
-        
-        //ARRAYLIST
-
-        // ArrayList<String> nomes = new ArrayList<>();
-
-        // nomes.add("Daniel");
-        // nomes.add("Braga");
-        // nomes.add("Gomes");
-        // nomes.add("Anna");
-        
-        //  System.out.println(nomes);
-        //  System.out.println(nomes.size());
-
-        // //é pra usar () e não [] pq é um array e nao um vetor, SIM É ISSO.
-        // //usar get se quiser algo mais especifico.
-
-        // // Size pra arraylist e lenght para vetor
-
-        // nomes.remove(0);
-        // // ou
-        // nomes.remove("Gomes");
-        // System.out.println(nomes);
-        // System.out.println(nomes.size());
-
-    
-
-        //Loops FOR, WHILE 
-        // VARIAVEL DE INTERAÇÃO
-        //condicional
-        //atribuição/ manipulação
-        // for(int i = 0; i <nomes.size(); i++){
-        //     System.out.println(nomes.get(i));
-        // }
-
-        // Cada String de nomesArr vai, uma por vez, para a variável "a"
-        // for( String a : nomesArr){
-        //     System.out.println(a); 
-        // }
-
-        //algo vai ser executado até uma condição seja atingida
-        // int contador = 0;
-        // while(contador<10){
-        //     System.out.println("Estou no contador");
-        //     contador++;
-        // }
-        
-        //Casting
-        // Mudar os valores int - double, double  int, string - int, int - string, 
-        
-        // double - int
-        // double numero = 20.0;
-        // int numeroint = (int) numero; 
-        // System.out.println(numeroint);
-
-        // int - double
-        // int numero = 20;
-        // double resultado = (double) numero;
-        // System.out.println(resultado);
-
-
-        // // String - int
-        // String NomeQualquer = "10";
-        // int int2 = Integer.parseInt(NomeQualquer);
-        // System.out.println(int2); 
-
-        // //int - string 
-        // String minhaString = String.valueOf(int2);
-        // System.out.println(minhaString);
+            // evita mostrar null
+            if(nome != null){
+                System.out.println(nome);
+            }
         }
+
+        // =====================================================
+        // ARRAYLIST
+        // =====================================================
+
+        System.out.println("\n========== ARRAYLIST ==========");
+
+        /*
+         * ArrayList:
+         * - tamanho dinâmico
+         * - usa métodos
+         * - size() ao invés de length
+         */
+
+        ArrayList<String> nomes = new ArrayList<>();
+
+        nomes.add("Anna");
+        nomes.add("Maria");
+        nomes.add("João");
+        nomes.add("Pedro");
+
+        System.out.println("Lista inteira:");
+        System.out.println(nomes);
+
+        System.out.println("\nPercorrendo ArrayList:");
+
+        for(String pessoa : nomes){
+            System.out.println(pessoa);
+        }
+
+        System.out.println("\nTamanho da lista: " + nomes.size());
+
+        nomes.remove("João");
+
+        System.out.println("\nApós remover João:");
+        System.out.println(nomes);
+
+        // =====================================================
+        // WHILE
+        // =====================================================
+
+        System.out.println("\n========== WHILE ==========");
+
+        int contador = 0;
+
+        while(contador < 5){
+            System.out.println("Contador: " + contador);
+            contador++;
+        }
+
+        // =====================================================
+        // CASTING
+        // =====================================================
+
+        System.out.println("\n========== CASTING ==========");
+
+        // double -> int
+
+        double numeroDouble = 19.99;
+        int numeroInt = (int) numeroDouble;
+
+        System.out.println("Double original: " + numeroDouble);
+        System.out.println("Convertido para int: " + numeroInt);
+
+        // int -> double
+
+        int numero2 = 10;
+        double resultado = (double) numero2;
+
+        System.out.println("\nInt original: " + numero2);
+        System.out.println("Convertido para double: " + resultado);
+
+        // String -> int
+
+        String textoNumero = "50";
+
+        int numeroConvertido = Integer.parseInt(textoNumero);
+
+        System.out.println("\nString original: " + textoNumero);
+        System.out.println("Convertido para int: " + numeroConvertido);
+
+        // int -> String
+
+        String texto = String.valueOf(numeroConvertido);
+
+        System.out.println("\nInt original: " + numeroConvertido);
+        System.out.println("Convertido para String: " + texto);
+
+        // =====================================================
+        // FINAL
+        // =====================================================
+
+        System.out.println("\n========== FIM DO PROGRAMA ==========");
+
+        //o que EU realmente fiz foi o commit passado, isso aqui eu só pedi pra ia ajeitar o codigo e deixar organizado
+    }
 }
